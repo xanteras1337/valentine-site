@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Для тебя ❤️</title>
+  
+  <!-- Романтичные шрифты -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Great+Vibes&family=Parisienne&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome для иконки звука -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="hearts"></div>
+
+<div class="screen active">
+  <div class="envelope">
+    <h1>У меня для тебя кое-что есть...</h1>
+    <button onclick="openEnvelope()">Открыть</button>
+  </div>
+</div>
+
+<div class="love hidden" id="loveBlock">
+  <div class="content">
+    <div class="heart-pulse">❤️</div>
+    
+    <h2 class="reveal">С 14 февраля ❤️</h2>
+    
+    <p class="reveal" style="animation-delay: 1.2s;">
+      Я просто хотел сказать, что ты очень важный человек для меня.<br>
+      Спасибо за эмоции, смех и моменты.<br>
+      Мне с тобой по-настоящему хорошо...
+    </p>
+    
+    <!-- Здесь твоё фото — замени src на реальное имя файла -->
+    <img src="images/photo_2026-02-13_08-30-46.jpg" alt="Мы вместе" class="couple-photo">
+    
+    <p class="reveal signature" style="animation-delay: 3.5s;">
+      Твой ...
+    </p>
+  </div>
+</div>
+
+<audio id="music" loop>
+  <source src="music.mp3" type="audio/mpeg">
+  Твой браузер не поддерживает аудио.
+</audio>
+
+<!-- Кнопка звука -->
+<button id="muteBtn" class="sound-btn">
+  <i class="fas fa-volume-up"></i>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>

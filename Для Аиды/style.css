@@ -1,0 +1,168 @@
+/* style.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100dvh;
+  font-family: 'Caveat', cursive;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fad0c4 100%);
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+}
+
+.hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.screen, .love {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.hidden { opacity: 0; pointer-events: none; transform: scale(0.94); }
+.active  { opacity: 1; pointer-events: auto; transform: scale(1); }
+
+.envelope, .love .content {
+  max-width: 90%;
+  padding: 30px 20px;
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(12px);
+  border-radius: 28px;
+  border: 1px solid rgba(255,255,255,0.35);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+}
+
+h1, h2 {
+  font-family: 'Great Vibes', cursive;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+h1 {
+  font-size: clamp(3rem, 12vw, 6.5rem);
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: clamp(3.5rem, 14vw, 7.5rem);
+  margin-bottom: 1.5rem;
+}
+
+p {
+  font-size: clamp(1.5rem, 6vw, 2.4rem);
+  line-height: 1.5;
+  margin: 1.2rem 0;
+}
+
+.signature {
+  font-size: clamp(2rem, 7vw, 3rem);
+  font-style: italic;
+  margin-top: 2.5rem;
+}
+
+/* Пульсирующее сердце */
+.heart-pulse {
+  font-size: clamp(6rem, 20vw, 14rem);
+  margin: 0 auto 1.5rem;
+  animation: pulse 2s infinite ease-in-out;
+  text-shadow: 0 0 25px rgba(255, 105, 180, 0.8);
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.12); }
+}
+
+/* Фото пары */
+.couple-photo {
+  max-width: 90%;
+  max-height: 45vh;
+  border-radius: 20px;
+  margin: 2rem auto;
+  display: block;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+  border: 10px solid rgba(255,255,255,0.35);
+  object-fit: cover;
+}
+
+/* Кнопка звука */
+.sound-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  border: 2px solid white;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s;
+  z-index: 100;
+}
+
+.sound-btn:hover {
+  background: rgba(255,255,255,0.5);
+  transform: scale(1.15);
+}
+
+/* Анимация появления текста */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: revealText 1.4s forwards ease-out;
+}
+
+@keyframes revealText {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Падающие сердечки */
+@keyframes fall {
+  0%   { transform: translateY(-120vh) rotate(0deg);   opacity: 0.9; }
+  100% { transform: translateY(120vh) rotate(1080deg); opacity: 0; }
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+  .envelope, .love .content {
+    padding: 25px 18px;
+    margin: 0 12px;
+    border-radius: 24px;
+  }
+
+  h1 { font-size: clamp(2.5rem, 11vw, 5rem); }
+  h2 { font-size: clamp(3rem, 13vw, 5.5rem); }
+  p  { font-size: clamp(1.4rem, 6vw, 2rem); }
+
+  .heart-pulse { font-size: clamp(5rem, 22vw, 10rem); }
+
+  .couple-photo {
+    max-height: 40vh;
+    border-width: 8px;
+  }
+
+  .sound-btn {
+    bottom: 15px;
+    right: 15px;
+    width: 48px;
+    height: 48px;
+    font-size: 1.5rem;
+  }
+}
